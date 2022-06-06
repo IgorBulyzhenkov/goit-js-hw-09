@@ -1,6 +1,8 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import 'flatpickr/dist/flatpickr.min.css';
 import flatpickr from 'flatpickr';
 import { convertMs } from './convertMs';
+
 //Импортировал переменные
 import { getRefs } from './getRefs';
 const { startBtn, inputEl, daysEl, hoursEl, minutesEl, secondsEl } = getRefs();
@@ -16,9 +18,10 @@ flatpickr('#datetime-picker', {
   minuteIncrement: 1,
   onClose(selectedDates) {
     if (selectedDates[0] < new Date()) {
-      window.alert('Please choose a date in the future');
+      Notify.failure('Please choose a date in the future');
       selectedDates[0] = new Date();
     } else {
+      Notify.success('You have chosen the correct date');
       startBtn.disabled = false;
       timerId = selectedDates[0];
     }
