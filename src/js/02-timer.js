@@ -1,9 +1,8 @@
-const flatpickr = require('flatpickr');
 import 'flatpickr/dist/flatpickr.min.css';
 import flatpickr from 'flatpickr';
 import { convertMs } from './convertMs';
-//Импортировал переменные 
-import {getRefs} from "./getRefs";
+//Импортировал переменные
+import { getRefs } from './getRefs';
 const { startBtn, inputEl, daysEl, hoursEl, minutesEl, secondsEl } = getRefs();
 
 startBtn.disabled = true;
@@ -58,4 +57,3 @@ function updateClockFace({ days, hours, minutes, seconds }) {
   minutesEl.textContent = minutes;
   secondsEl.textContent = seconds;
 }
-
