@@ -50,11 +50,11 @@ function renderTime(date) {
     return;
   }
 
-  updateClockFace(componentsTimer);
+  clockFace(componentsTimer);
 }
 
 //Вынес текстовый контент в отдельную функцию
-function updateClockFace({ days, hours, minutes, seconds }) {
+function clockFace({ days, hours, minutes, seconds }) {
   daysEl.textContent = days;
   hoursEl.textContent = hours;
   minutesEl.textContent = minutes;
