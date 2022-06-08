@@ -17,7 +17,6 @@ function onStartButton(e) {
       backgroundColorStyle();
     }, 1000);
     startBtn.disabled = true;
-    backgroundColorStyle();
   }
 }
 
